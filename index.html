@@ -18,11 +18,18 @@
 <body>
     <!-- HEADER / NAVEGACIÓN -->
     <header class="header">
-        <nav class="nav__principal" aria-label="Menú principal">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal"
+            aria-label="Abrir menú de navegación">
+            <span class="nav__toggle-linea"></span>
+            <span class="nav__toggle-linea"></span>
+            <span class="nav__toggle-linea"></span>
+        </button>
+
+        <nav class="nav__principal" id="menu-principal" aria-label="Menú principal">
             <a href="#">Inicio</a>
-            <a href="#">Blog</a>
-            <a href="#">Novedades</a>
-            <a href="#">Contacto</a>
+            <a href="#articulos">Blog</a>
+            <a href="#novedades">Novedades</a>
+            <a href="#contacto">Contacto</a>
         </nav>
 
         <p class="fecha"></p>
@@ -31,6 +38,23 @@
             const fecha = new Date();
             const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.querySelector('.fecha').textContent = fecha.toLocaleDateString('es-ES', opciones);
+
+            const navToggle = document.querySelector('.nav__toggle');
+            const navPrincipal = document.querySelector('.nav__principal');
+
+            navToggle.addEventListener('click', () => {
+                const estaAbierto = navPrincipal.classList.toggle('nav__principal--abierto');
+                navToggle.setAttribute('aria-expanded', String(estaAbierto));
+                navToggle.setAttribute('aria-label', estaAbierto ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+            });
+
+            navPrincipal.querySelectorAll('a').forEach((enlace) => {
+                enlace.addEventListener('click', () => {
+                    navPrincipal.classList.remove('nav__principal--abierto');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+                });
+            });
         </script>
     </header>
     <!-- CONTENIDO PRINCIPAL -->

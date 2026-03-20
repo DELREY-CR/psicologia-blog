@@ -1,0 +1,48 @@
+/* =========================
+   UTILIDADES / REUTILIZABLES
+========================= */
+
+.separador {
+  width: 100%;
+  padding: 50px 0;
+  background-color: var(--fondo);
+  display: flex;
+  justify-content: center;
+}
+
+.separador::before {
+  content: '';
+  width: 120px;
+  height: 2px;
+  background-color: var(--primario);
+  border-radius: 10px;
+}
+
+.btn-primario {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+background-color: var(--primario);
+}
+
+.btn-primario:hover {
+  background-color: var(--primario-hover);
+}
+
+.btn-secundario {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+background-color: var(--secundario);
+}
+.btn-secundario:hover {
+  background-color: var(--secundario-hover);
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Psicología</title>
+    <link rel="stylesheet" href="01-base.css">
+    <link rel="stylesheet" href="02-utilidades.css">
+    <link rel="stylesheet" href="03-bloques.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header">
+        <nav class="nav__principal" aria-label="Menú principal">
+            <a href="#">Inicio</a>
+            <a href="#">Blog</a>
+            <a href="#">Novedades</a>
+            <a href="#">Contacto</a>
+        </nav>
+
+        <p class="fecha"></p>
+
+        <script>
+            const fecha = new Date();
+            const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.querySelector('.fecha').textContent = fecha.toLocaleDateString('es-ES', opciones);
+        </script>
+    </header>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- HERO / PORTADA -->
+        <section class="hero">
+            <div class="hero__contenido">
+                <h1>Psicología y desarrollo personal</h1>
+                <p class="hero__subtitulo">Consejos de autoayuda y bienestar emocional.</p>
+            </div>
+
+            <div class="hero__imagenes">
+               <video src="imagenes/hero-psicologia.mp4" autoplay muted loop class="video"></video>
+            </div>
+
+            <div class="hero__acciones">
+                <a href="#articulos" class="btn-primario">Ver artículos</a>
+                <a href="#novedades" class="btn-primario">Tendencias</a>
+            </div>
+        </section>
+
+        <!-- SECCIONES DE ARTÍCULOS -->
+
+        <section id="articulos" class="articulos">
+            <h2> Artículos de bienestar emocional</h2>
+            <div class="articulos__lista">
+                <article class="articulo">
+                    <img src="imagenes/ansiedad.jpg" alt="Imagen relacionada con la ansiedad" width="400" height="300">
+                    <h3>5 consejos para mejorar la ansiedad</h3>
+                </article>
+
+                <article class="articulo">
+                    <img src="imagenes/estres.jpg" alt="Imagen relacionada con el estrés" width="400" height="300">
+                    <h3>Cómo manejar el estrés diario</h3>
+                </article>
+
+                <article class="articulo">
+                    <img src="imagenes/sueno.jpg" alt="Imagen relacionada con el sueño" width="400" height="300">
+                    <h3>5 consejos para mejorar el sueño</h3>
+                </article>
+            </div>
+        </section>
+
+        <section id="novedades" class="novedades">
+            <h2>Novedades en psicología</h2>
+            <div class="articulos__lista">
+                <article class="articulo">
+                    <img src="imagenes/mindfulness.jpg" alt="Imagen relacionada con mindfulness" width="400"
+                        height="300">
+                    <h3>Últimas investigaciones sobre mindfulness</h3>
+                </article>
+
+                <article class="articulo">
+                    <img src="imagenes/terapia.jpg" alt="Imagen relacionada con terapia cognitivo-conductual"
+                    width="400" height="300">
+                    <h3>Avances en terapia cognitivo-conductual</h3>
+                </article>
+
+                <article class="articulo">
+                    <img src="imagenes/tecnologia.jpg" alt="Imagen relacionada con tecnología y psicología" width="400"
+                    height="300">
+                    <h3>Cómo la tecnología está cambiando la psicología</h3>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="Contacto">
+
+            <h2>Contacto</h2>
+            <form class="formulario" action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit" class="btn-primario">Enviar</button>
+            </form>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Psicología y Desarrollo Personal. Todos los derechos reservados.</p>
+        </footer>
+
+
+    </main>
+
+</body>
+
+</html>

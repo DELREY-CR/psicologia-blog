@@ -1,0 +1,125 @@
+:root {
+    --fondo: #F7F8F6;
+    --superficie: #FFFFFF;
+    --texto-principal: #eaf0ee;
+    --texto-secundario: #2C3E35;
+    --texto-parrafos: #4A5C55;
+    --primario: #7FAF9C;
+    --primario-hover: #6A9A88;
+    --acento-azul: #AFC6D9;
+    --acento-durazno: #EEDCCF;
+    --borde-suave: #DDE5E0;
+    --exito-suave: #9FC8B2;
+    --fuente-titulos: "Cormorant Garamond", serif;
+    --fuente-texto: "Manrope", sans-serif;
+    --tam-base: 16px;
+    --tam-h1: 3.5rem;
+    --tam-h2: 2rem;
+    --tam-h3: 1.5rem;
+    --tam-p: 1.2rem;
+    --espacio-sm: 12px;
+    --espacio-md: 16px;
+    --espacio-lg: 24px;
+    --espacio-xl: 40px;
+    --radio-md: 12px;
+    --ancho-contenido: 1200px;
+    --sombra-suave: 0 8px 24px rgba(47, 58, 54, 0.08);
+    --transicion-base: 0.3s ease;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos globales */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo);
+    color: var(--texto-principal);
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Evita espacios debajo de imágenes */
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 40px 0;
+  margin-bottom: 0;
+  scroll-margin-top: 110px; 
+}
+
+/* Tipografía */
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--tam-h1);
+  color: var(--texto-principal);
+}
+
+h2,h3 {
+  color: var(--texto-secundario);
+}
+
+h2 {
+  font-size: var(--tam-h2);
+}
+
+h3 {
+  font-size: var(--tam-h3);
+}
+
+p {
+  font-size: var(--tam-p);
+  color: var(--texto-parrafos);
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+section p {
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
